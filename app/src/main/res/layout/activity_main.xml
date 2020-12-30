@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D9B7FF"
+    android:background="#EAD6FF"
+
 
 
     android:orientation="vertical"
@@ -11,7 +12,7 @@
     tools:ignore="ExtraText">
 
     <ImageView
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:src="@drawable/hi" />
@@ -21,8 +22,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="10dp"
+        android:padding="5dp"
         android:text="quantity"
+        android:textAllCaps="true"
+        android:lineHeight="10dp"
+        android:textColor="#9C27B0"
+
+        android:textSize="36sp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+
+>
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+       android:layout_alignParentStart="true"
+        android:text="+"
+        android:onClick="increment" />
+
+        <TextView
+            android:id="@+id/quantity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="000"
+            android:layout_centerInParent="true"
+            android:textColor="#000000"
+            android:textSize="36sp" />
+
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+           android:layout_alignParentEnd="true"
+            android:onClick="decrement"
+            android:text="-" />
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:text="price"
         android:textAllCaps="true"
         android:lineHeight="10dp"
         android:textColor="#9C27B0"
@@ -30,15 +74,12 @@
         android:textSize="36sp" />
 
     <TextView
-        android:id="@+id/quantity_text_view"
+        android:id="@+id/price_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="16dp"
-        android:text="0"
+        android:text="$ 0"
         android:textColor="#000000"
-
-
         android:textSize="36sp" />
 
     <Button
@@ -54,9 +95,16 @@
         android:textColor="#EDD5FF"
         android:textSize="16sp"
        android:onClick="submitOrder" />
+
+
+
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:src="@drawable/bg" />
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="11"
+        android:scaleType="center"
+
+        android:src="@drawable/bd" />
+
 </LinearLayout>
