@@ -26,6 +26,8 @@ import android.widget.TextView;
  */
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.w3c.dom.Text;
+
 import java.text.NumberFormat;
 
 public class MainActivity<var> extends AppCompatActivity {
@@ -39,17 +41,20 @@ public class MainActivity<var> extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked.
      */
-    int  priceOfCoffee = 5,quantity = 0;
+    int  priceOfCoffee = 5,quantity = 0,order=0;
 
     public void submitOrder(View view) {
         display(quantity);
-        displayPrice(quantity * priceOfCoffee);
+        displayPrice(quantity*priceOfCoffee);
+        order += 1;
+        String numberOfOrder = "Total Orders: "+order+ "\nTotal coffee: "+quantity;
+        displayOrder(numberOfOrder);
     }
     public void increment(View view){
         quantity += 1;
 
         display(quantity);
-        displayPrice(quantity * priceOfCoffee);
+       // displayPrice(quantity*priceOfCoffee);
     }
 
     public void decrement(View view){
@@ -58,9 +63,8 @@ public class MainActivity<var> extends AppCompatActivity {
             quantity = 0;
         }
         display(quantity);
-        displayPrice(quantity * priceOfCoffee);
+        //displayPrice(quantity*priceOfCoffee);
     }
-
 
     /**
      * This method displays the given quantity value on the screen.
@@ -74,6 +78,10 @@ public class MainActivity<var> extends AppCompatActivity {
      */
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        priceTextView.setText("Total Price: "+NumberFormat.getCurrencyInstance().format(number));
+    }
+    private void displayOrder(String number){
+        TextView totalOrder = (TextView) findViewById(R.id.total_order);
+        totalOrder.setText(number);
     }
 }
