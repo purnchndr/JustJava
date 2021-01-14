@@ -82,20 +82,6 @@
         android:textColor="#000000"
         android:textSize="36sp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:background="#A500FF"
-        android:baselineAligned="false"
-        android:padding="5dp"
-        android:text="Order"
-        android:textAllCaps="true"
-        android:textColor="#EDD5FF"
-        android:textSize="16sp"
-       android:onClick="submitOrder" />
-
 
     <TextView
         android:id="@+id/total_order"
@@ -105,6 +91,20 @@ android:textSize="24sp"
         android:textColor="#9159C8"
         android:layout_height="wrap_content"
         android:text="Total Orders: 0" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="#A500FF"
+        android:baselineAligned="false"
+        android:onClick="submitOrder"
+        android:padding="5dp"
+        android:text="Order"
+        android:textAllCaps="true"
+        android:textColor="#EDD5FF"
+        android:textSize="16sp" />
 
     <ImageView
         android:layout_width="match_parent"
